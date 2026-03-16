@@ -8,7 +8,7 @@ import { useSelector } from 'react-redux';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { useEffect } from 'react';
-
+import Spinner from 'react-bootstrap/Spinner';
 function App() {
   const isloding = useSelector((st) => st.search.isloading);
   const movies = useSelector((state) =>
@@ -20,7 +20,7 @@ function App() {
       className='App'
       style={{
         backgroundColor: 'black',
-        minHeight:'100vh',
+        minHeight: '100vh',
         paddingTop: '200px',
       }}>
       <Navbar />
@@ -29,6 +29,7 @@ function App() {
           {movies.map((movie, index) => (
             <Col key={index}>
               <Movie
+              isloding={isloding}
                 title={movie.Title}
                 img={movie.Poster}
                 year={movie.Year}
