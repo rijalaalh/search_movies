@@ -1,0 +1,61 @@
+/** @format */
+
+.movie-card {
+  cursor: pointer;
+  border: none !important;
+  transition: 0.6 ease;
+  -webkit-transition: 0.6 ease;
+  -moz-transition: 0.6 ease;
+  -ms-transition: 0.6 ease;
+  -o-transition: 0.6 ease;
+  overflow: hidden;
+  position: relative;
+}
+.movie-card::before{
+    content: attr(rating);
+    position: absolute;
+    background-color: rgb(79, 79, 223);
+    color: white;
+    padding: 5px;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+    font-weight: 700;
+    font-size: 17px;
+    left: 5px;
+    top: 5px;
+    z-index: 1;
+}
+.h5 {
+  color: rgba(255, 255, 255, 0.553) !important;
+}
+.movie_body {
+    transition: 0.6 ease;
+    background-color: black;
+    z-index: 9999;
+    -webkit-transition: 0.6 ease;
+    -moz-transition: 0.6 ease;
+    -ms-transition: 0.6 ease;
+    -o-transition: 0.6 ease;
+}
+.movie-card img {
+  width: 100%;
+  transition: transform 0.6s ease;
+  cursor: pointer;
+  -webkit-transition: transform 0.6s ease;
+  -moz-transition: transform 0.6s ease;
+  -ms-transition: transform 0.6s ease;
+  -o-transition: transform 0.6s ease;
+}
+.movie-card img:hover {
+  transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -o-transform: scale(1.2);
+}
+.movie-card:hover .movie_body {
+  box-shadow: 0px -20px 20px 13px black;
+}
