@@ -6,17 +6,20 @@ import { CiSearch } from 'react-icons/ci';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetechsearchapi } from './searchSlice';
 import './navbar.css';
+import { Button } from 'react-bootstrap';
+import HeartModal from './modals';
 import { MdOutlineLocalMovies } from 'react-icons/md';
-import { useState,useEffect } from 'react';
+import { useState, useEffect } from 'react';
 function Navbar() {
   const [Search, SetSearch] = useState(null);
   const dispatch = useDispatch();
-useEffect(()=>{
-    const time=setTimeout(()=>{
-        dispatch(fetechsearchapi(Search))
-    },500)
-    return ()=>clearTimeout(time)
-},[Search])
+  const [modalShow, setModalShow] = useState(false);
+  useEffect(() => {
+    const time = setTimeout(() => {
+      dispatch(fetechsearchapi(Search));
+    }, 500);
+    return () => clearTimeout(time);
+  }, [Search]);
   return (
     <div className='containe'>
       <h1>
@@ -55,6 +58,11 @@ useEffect(()=>{
           }}
         />
       </InputGroup>
+      <Button variant='dark' className='button_favorite' onClick={() => setModalShow(true)}>
+        your fav ❤️
+      </Button>
+
+      <HeartModal show={modalShow} onHide={() => setModalShow(false)} />
     </div>
   );
 }

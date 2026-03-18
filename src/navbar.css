@@ -15,3 +15,10 @@
   margin-top: 0;
   z-index: 999999;
 }
+.button_favorite{
+  position: absolute;
+  right: 25px;
+  bottom: 15px;
+  width: 10%;
+  overflow:hidden;
+}

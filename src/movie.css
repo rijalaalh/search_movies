@@ -59,3 +59,9 @@
 .movie-card:hover .movie_body {
   box-shadow: 0px -20px 20px 13px black;
 }
+.heart_button{
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 30px;
+}
